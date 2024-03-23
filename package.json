@@ -1,0 +1,21 @@
+{
+  "name": "create-express-app",
+  "version": "0.0.1",
+  "description": "Interactive CLI to build Express.js app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsup src --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "bin": {
+    "create-express-app": "./dist/index.js"
+  },
+  "author": "Nafi Asib",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3"
+  }
+}
