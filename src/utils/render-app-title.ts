@@ -1,8 +1,10 @@
+import { TITLE_TEXT } from "@/consts.js";
 import gradient from "gradient-string";
 
-import { TITLE_TEXT } from "~/consts.js";
-
-const poimandresTheme = {
+/**
+ * Theme for the gradient effect.
+ */
+const theme = {
   blue: "#1478DB",
   brightBlack: "#808080",
   brightBlue: "#1478DB",
@@ -17,13 +19,11 @@ const poimandresTheme = {
   yellow: "#ffc600",
 };
 
+/**
+ * Render the app title with a gradient effect.
+ */
 export const renderAppTitle = () => {
-  const titleGradient = gradient(Object.values(poimandresTheme));
+  const titleGradient = gradient(Object.values(theme));
 
-  // resolves weird behavior where the ascii is offset
-  //   const pkgManager = getUserPkgManager();
-  //   if (pkgManager === "yarn" || pkgManager === "pnpm") {
-  //     console.log("");
-  //   }
   console.log(titleGradient.multiline(TITLE_TEXT));
 };

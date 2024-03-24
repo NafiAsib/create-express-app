@@ -3,10 +3,7 @@ import { setTimeout } from "node:timers/promises";
 import color from "picocolors";
 
 export default async function cli() {
-  console.clear();
-
   await setTimeout(1000);
-
   p.intro(`${color.bgCyan(color.black(" create-app "))}`);
 
   const project = await p.group(
@@ -85,5 +82,3 @@ export default async function cli() {
     `Problems? ${color.underline(color.cyan("https://example.com/issues"))}`
   );
 }
-
-cli().catch(console.error);

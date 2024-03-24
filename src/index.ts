@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 
-import { logger } from "~/utils/logger.js";
-import { renderAppTitle } from "./utils/render-app-title.js";
-import cli from "./cli/index.js";
+import cli from "@/cli/index.js";
+import { logger } from "@/utils/logger.js";
 
 const main = async () => {
-  renderAppTitle();
-  await cli();
+  // renderAppTitle();
+  cli().catch(console.error);
 };
 
 main().catch((err) => {

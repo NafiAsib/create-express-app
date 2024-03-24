@@ -4,7 +4,7 @@
   "description": "Interactive CLI to build Express.js app",
   "main": "index.js",
   "scripts": {
-    "dev": "tsup src --watch",
+    "dev": "tsup --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/gradient-string": "^1.1.5",
     "@types/node": "^20.11.30",
+    "tsc-watch": "^6.0.4",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"
   },

@@ -14,10 +14,11 @@
     "moduleResolution": "node16",
     "baseUrl": "./",
     "paths": {
-      "~/*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     "outDir": "./dist",
-    "types": ["node"]
+    "types": ["node"],
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"]
 }
