@@ -2,10 +2,20 @@
 
 import cli from "@/cli/index.js";
 import { logger } from "@/utils/logger.js";
+import { renderAppTitle } from "@/utils/render-app-title.js";
+import { makeProject } from "./makeProject.js";
 
 const main = async () => {
-  // renderAppTitle();
-  cli().catch(console.error);
+  renderAppTitle();
+  const userAgent = process.env.npm_config_user_agent;
+  console.log(userAgent);
+  try {
+    const { appName, database, orm, packages } = await cli();
+    console.log({ appName, database, orm, packages });
+    makeProject({ appName, database, orm, packages });
+  } catch (error) {
+    logger.error(error);
+  }
 };
 
 main().catch((err) => {
