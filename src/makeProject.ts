@@ -3,6 +3,8 @@ import path from "path";
 import ora from "ora";
 import fs from "fs-extra";
 import chalk from "chalk";
+import { logger } from "./utils/logger.js";
+import { PKG_ROOT } from "./consts.js";
 
 interface Options {
   appName: string;
@@ -26,8 +28,9 @@ export const makeProject = ({ appName, database, orm, packages }: Options) => {
     spinner.fail("Aborting installation...");
     process.exit(1);
   }
-
-  const srcDir = path.resolve(__dirname, "./template/base");
+  spinner.start();
+  const srcDir = path.resolve(PKG_ROOT, "templates/base");
+  console.log(srcDir);
   fs.copySync(srcDir, directoryToCreateProject);
   fs.renameSync(
     path.join(directoryToCreateProject, "_gitignore"),
